@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Magazin | Performance Demo</title>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="logo">Campus Magazin</div>
+      <nav>
+        <a href="#">News</a>
+        <a href="#">Studium</a>
+        <a href="#">Technologie</a>
+      </nav>
+    </header>
+
+    <main>
+      <article class="article">
+        <p class="kicker">Web Technologien</p>
+
+        <h1>Warum Web Performance über gute Nutzererfahrung entscheidet</h1>
+
+        <p class="lead">
+          Webseiten können auf den ersten Blick modern und hochwertig wirken.
+          Aber lassen die sich wirklich schnell laden und flüssig bedienen?
+        </p>
+
+        <img
+          class="hero-image"
+          src="src/assets/hero.jpg"
+          loading="lazy"
+          alt="Person arbeitet an einem Laptop"
+        />
+
+        <section id="ad-container"></section>
+
+        <p>
+          Web Performance beschreibt nicht nur, wie schnell eine Seite vollständig geladen ist.
+          Entscheidend ist vielmehr, wann relevante Inhalte sichtbar werden, wie schnell die
+          Seite auf Eingaben reagiert und ob das Layout stabil bleibt.
+        </p>
+
+        <p>
+          Genau hier setzen die Core Web Vitals an. Sie helfen dabei, Nutzererfahrung messbar
+          zu machen und konkrete technische Optimierungspotenziale zu erkennen.
+        </p>
+
+        <h2>Performance ist mehr als Ladezeit</h2>
+
+        <p>
+          Eine Seite kann bereits sichtbar sein und sich trotzdem langsam anfühlen. Das passiert
+          zum Beispiel, wenn JavaScript den Browser blockiert oder wenn sich Inhalte beim Laden
+          plötzlich verschieben.
+        </p>
+
+        <div class="video-section">
+          <h2>Video zum Thema</h2>
+          <iframe
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="Demo Video"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <section class="comments">
+          <h2>Kommentare</h2>
+          <p>
+            Lade weitere Kommentare und beobachte, wie die Seite auf die Interaktion reagiert.
+          </p>
+
+          <button id="load-comments" class="button">
+            Kommentare laden
+          </button>
+
+          <div id="comments-list" class="comments-list"></div>
+        </section>
+      </article>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
