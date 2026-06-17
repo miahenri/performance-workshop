@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Campus Magazin | Performance Demo</title>
+    <!-- CLS verbessert:
+             CSS wird früh geladen, damit die reservierten Bereiche für Banner und Video direkt sichtbar sind.
+        -->
+    <link rel="stylesheet" href="/src/style.css" />
   </head>
 
   <body>
@@ -27,14 +31,25 @@
           Aber lassen die sich wirklich schnell laden und flüssig bedienen?
         </p>
 
+        <!-- LCP verbessert:
+             - nicht lazy-loaded
+             - feste Maße
+             - hohe Ladepriorität
+             - idealerweise optimiertes Bildformat verwenden
+        -->
         <img
           class="hero-image"
-          src="src/assets/hero.jpg"
-          loading="lazy"
+          src="src/assets/hero-small.webp"
+          width="1200"
+          height="800"
+          fetchpriority="high"
           alt="Person arbeitet an einem Laptop"
         />
 
-        <section id="ad-container"></section>
+        <!-- CLS verbessert:
+             Der Platz für den später eingefügten Banner wird vorher reserviert.
+        -->
+        <section id="ad-container" aria-live="polite"></section>
 
         <p>
           Web Performance beschreibt nicht nur, wie schnell eine Seite vollständig geladen ist.
@@ -55,13 +70,19 @@
           plötzlich verschieben.
         </p>
 
+        <!-- CLS verbessert:
+             Der Video-Container reserviert durch aspect-ratio vorher Platz.
+        -->
         <div class="video-section">
           <h2>Video zum Thema</h2>
-          <iframe
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-            title="Demo Video"
-            allowfullscreen
-          ></iframe>
+
+          <div class="video-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="Demo Video"
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
 
         <section class="comments">
